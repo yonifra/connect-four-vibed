@@ -1,0 +1,119 @@
+.game-status {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.game-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.status-message {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
+
+.winner-message,
+.turn-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.winner-piece,
+.current-piece {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.winner-message.red .winner-piece,
+.turn-message.red .current-piece {
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #e63946);
+  box-shadow: 0 3px 10px rgba(230, 57, 70, 0.5);
+}
+
+.winner-message.yellow .winner-piece,
+.turn-message.yellow .current-piece {
+  background: radial-gradient(circle at 30% 30%, #ffd93d, #f4a261);
+  box-shadow: 0 3px 10px rgba(244, 162, 97, 0.5);
+}
+
+.winner-message {
+  animation: celebrate 0.5s ease-in-out;
+  font-weight: bold;
+}
+
+@keyframes celebrate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.draw-message {
+  color: #a0a0a0;
+  font-weight: bold;
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.reset-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+.reset-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .game-title {
+    font-size: 2rem;
+  }
+
+  .status-message {
+    font-size: 1.2rem;
+  }
+
+  .winner-piece,
+  .current-piece {
+    width: 28px;
+    height: 28px;
+  }
+
+  .reset-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

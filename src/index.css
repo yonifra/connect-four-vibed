@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Ensure smooth animations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent text selection on game elements */
+.game-board,
+.game-status {
+  user-select: none;
+  -webkit-user-select: none;
+}
